@@ -1,5 +1,5 @@
 import { Adapter, AdapterPayload } from 'oidc-provider';
-import { DatabaseService } from '../database/database.service';
+import { DatabaseService } from '../database/database.service.js';
 
 export class TestAdapter implements Adapter {
   constructor(public modelName: string, public dbService: DatabaseService) {}

@@ -1,6 +1,6 @@
 import { Module } from '@nestjs/common';
-import { DatabaseModule } from 'src/database/database.module';
-import { OidcConfigService } from './oidc-config.service';
+import { DatabaseModule } from '../database/database.module.js';
+import { OidcConfigService } from './oidc-config.service.js';
 
 @Module({
   imports: [DatabaseModule],

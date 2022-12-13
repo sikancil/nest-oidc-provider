@@ -1,9 +1,13 @@
 import { Logger } from '@nestjs/common';
 import { NestFactory } from '@nestjs/core';
 import { NestExpressApplication } from '@nestjs/platform-express';
-import { AppModule } from './app.module';
-import { join } from 'path';
-import { urlencoded } from 'body-parser';
+import { AppModule } from './app.module.js';
+import { dirname, join } from 'path';
+import bodyParser from 'body-parser';
+import { fileURLToPath } from 'url';
+
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = dirname(__filename);
 
 async function bootstrap() {
   const app = await NestFactory.create<NestExpressApplication>(AppModule);
@@ -12,7 +16,7 @@ async function bootstrap() {
   app.setBaseViewsDir(join(__dirname, '../', 'views'));
   app.setViewEngine('ejs');
 
-  app.use('/interaction', urlencoded({ extended: false }));
+  app.use('/interaction', bodyParser.urlencoded({ extended: false }));
 
   const PORT = 3001;
   await app.listen(PORT);

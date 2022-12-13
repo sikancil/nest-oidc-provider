@@ -5,8 +5,8 @@ import {
 } from 'nest-oidc-provider';
 import { Injectable } from '@nestjs/common';
 import { AdapterFactory } from 'oidc-provider';
-import { TestAdapter } from '../adapters/test.adapter';
-import { DatabaseService } from '../database/database.service';
+import { TestAdapter } from '../adapters/test.adapter.js';
+import { DatabaseService } from '../database/database.service.js';
 
 @Injectable()
 export class OidcConfigService implements OidcModuleOptionsFactory {

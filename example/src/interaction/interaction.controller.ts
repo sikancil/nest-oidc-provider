@@ -7,7 +7,7 @@ import {
   Post,
   Res,
 } from '@nestjs/common';
-import { Provider } from 'oidc-provider';
+import Provider from 'oidc-provider';
 import { Oidc, InteractionHelper } from 'nest-oidc-provider';
 import { Response } from 'express';
 
